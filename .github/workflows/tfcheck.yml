@@ -27,8 +27,8 @@ jobs:
         uses: bridgecrewio/checkov-action@master
         with:
           directory: terraform/aws/
-          check: CKV_AWS* # optional: run only a specific check_id. can be comma separated list
-          #skip_check: CKV_AWS_1 # optional: skip a specific check_id. can be comma separated list
+          #check: CKV_AWS* # optional: run only a specific check_id. can be comma separated list
+          skip_check: CKV_AZURE*, CVK_GCP*, CVK_K8S*, CKV_LIN* # optional: skip a specific check_id. can be comma separated list
           quiet: false # optional: display only failed checks
           soft_fail: false # optional: do not return an error code if there are failed checks
           framework: terraform # optional: run only on a specific infrastructure {cloudformation,terraform,kubernetes,all}
