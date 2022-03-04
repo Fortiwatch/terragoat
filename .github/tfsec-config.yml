@@ -1,0 +1,10 @@
+---
+include:
+  - aws-api-gateway-enable-access-logging
+  - aws-s3-enable-versioning
+ 
+exclude:
+  - aws-s3-block-public-acls
+
+severity_overrides:
+  aws-s3-enable-versioning: HIGH
