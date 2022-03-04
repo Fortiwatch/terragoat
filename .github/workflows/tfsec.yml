@@ -29,7 +29,7 @@ jobs:
         #check: # Optional: Run only a specific check_id, can be a comma separated list (details at bridgecrewio/checkov/docs/3.Scans/resource-scans.md)
         #skip_check: # Optional: Skip a specific check_id, can be a comma separated list
         #framework: # Optional: Run only on a specific infrastructure, one of: cloudformation, terraform, kubernetes, all
-     env:  
+      env:  
         GITHUB_REPOSITORY: ${{ github.repository }}
         GITHUB_REF: ${{ github.ref }}
         GITHUB_SHA: ${{ github.sha }}
