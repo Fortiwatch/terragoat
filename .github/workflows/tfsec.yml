@@ -24,7 +24,7 @@ jobs:
       with:
         # api-key: ${{ secrets.API_KEY }}
         quiet: true # Optional: Display only failed check
-        soft_fail: false # Optional: Do not return an error code if there are failed checks
+        soft_fail: true # Optional: Do not return an error code if there are failed checks
         output_format: cli # Optional: The output format, one of: cli, json, junitxml, github_failed_only
         #check: # Optional: Run only a specific check_id, can be a comma separated list (details at bridgecrewio/checkov/docs/3.Scans/resource-scans.md)
         #skip_check: # Optional: Skip a specific check_id, can be a comma separated list
