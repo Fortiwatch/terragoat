@@ -1,38 +1,41 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+# This is a starter workflow to help you get started with scanning Terraform using Actions
 
-name: tfsec
+name: CIS Benchmark Scan for scanning code
 
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ $default-branch ]
   pull_request:
-    branches: [ master ]  
-  schedule:
-    - cron: '45 15 * * 5'
+    branches: [ $default-branch ]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  tfsec:
-    name: Run tfsec sarif report
+  # This workflow contains a single job called "build"
+   iac-sec-scan:
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
     steps:
-      - name: Clone repo
-        uses: actions/checkout@v2
-
-      - name: Run tfsec
-        uses: tfsec/tfsec-sarif-action@9a83b5c3524f825c020e356335855741fd02745f
-        with:
-          sarif_file: tfsec.sarif         
-
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: tfsec.sarif  
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - name: Run Bridgecrew 
+      id: Bridgecrew
+      uses: bridgecrewio/bridgecrew-action@master
+      with:
+        # api-key: ${{ secrets.API_KEY }}
+        quiet: true # Optional: Display only failed check
+        soft_fail: false # Optional: Do not return an error code if there are failed checks
+        output_format: cli # Optional: The output format, one of: cli, json, junitxml, github_failed_only
+        #check: # Optional: Run only a specific check_id, can be a comma separated list (details at bridgecrewio/checkov/docs/3.Scans/resource-scans.md)
+        #skip_check: # Optional: Skip a specific check_id, can be a comma separated list
+        #framework: # Optional: Run only on a specific infrastructure, one of: cloudformation, terraform, kubernetes, all
+    - name: Expose report
+      uses: actions/upload-artifact@v2
+      with:
+        name: SARIF results
+        path: results.sarif
+    # Uploads results.sarif to GitHub repository using the upload-sarif action
+    - uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: results.sarif
