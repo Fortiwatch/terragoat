@@ -10,8 +10,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]  
-  schedule:
-    - cron: '40 13 * * 3'
+  #schedule:
+    #- cron: '40 13 * * 3'
 
 jobs:
   tfsec:
