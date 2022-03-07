@@ -5,6 +5,7 @@ severity_overrides:
 include:
   - aws-api-gateway-enable-access-logging
   - aws-s3-enable-versioning
+  - aws-s3-no-public-access-with-acl
  
 exclude:
   - aws-s3-block-public-acls
