@@ -7,6 +7,3 @@ jobs:
   action:
     name: Codacy SAST Scan
     uses: Fortiwatch/advanced-security-compliance/.github/workflows/codeacy-analysis.yml@main
-    with:
-      directory: ./terraform/
-      tool: checkov
