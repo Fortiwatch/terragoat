@@ -1,4 +1,4 @@
-name: Coacy-Scan
+name: Codacy-Scan
 
 on:
   workflow_dispatch
@@ -8,5 +8,5 @@ jobs:
     name: Codacy SAST Scan
     uses: Fortiwatch/advanced-security-compliance/.github/workflows/codeacy-analysis.yml@main
     with:
-      directory: terraform
+      directory: ./terraform
       tool: checkov
