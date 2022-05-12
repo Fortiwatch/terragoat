@@ -6,6 +6,6 @@ on:
 jobs:
   action:
     name: Codacy SAST Scan
-    uses: Fortiwatch/advanced-security-compliance/.github/workflows/codeacy-analysis.yml@main
+    uses: Fortiwatch/advanced-security-compliance/.github/workflows/codeacy-analysis.yml@v1
     with:
       output: results.sarif
