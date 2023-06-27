@@ -21,8 +21,17 @@ resource "aws_db_instance" "default" {
   publicly_accessible     = true
 
   tags = {
-    Name        = "${local.resource_prefix.value}-rds"
-    Environment = local.resource_prefix.value
+    Name                 = "${local.resource_prefix.value}-rds"
+    Environment          = local.resource_prefix.value
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "default"
+    yor_trace            = "5ca0a575-22f6-434a-aa91-f4665ba238db"
   }
 
   # Ignore password changes from tf plan diff
@@ -38,8 +47,17 @@ resource "aws_db_option_group" "default" {
   option_group_description = "Terraform OG"
 
   tags = {
-    Name        = "${local.resource_prefix.value}-og"
-    Environment = local.resource_prefix.value
+    Name                 = "${local.resource_prefix.value}-og"
+    Environment          = local.resource_prefix.value
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "default"
+    yor_trace            = "a43adf11-92af-48ff-945e-25953110707e"
   }
 }
 
@@ -61,8 +79,17 @@ resource "aws_db_parameter_group" "default" {
   }
 
   tags = {
-    Name        = "${local.resource_prefix.value}-pg"
-    Environment = local.resource_prefix.value
+    Name                 = "${local.resource_prefix.value}-pg"
+    Environment          = local.resource_prefix.value
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "default"
+    yor_trace            = "334f3c49-9daa-43e7-8ff3-a3c22c26a2a8"
   }
 }
 
@@ -72,8 +99,17 @@ resource "aws_db_subnet_group" "default" {
   description = "Terraform DB Subnet Group"
 
   tags = {
-    Name        = "sg-${local.resource_prefix.value}"
-    Environment = local.resource_prefix.value
+    Name                 = "sg-${local.resource_prefix.value}"
+    Environment          = local.resource_prefix.value
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "default"
+    yor_trace            = "976b85d2-edb0-4f39-bfdc-9b0678390fae"
   }
 }
 
@@ -82,8 +118,17 @@ resource "aws_security_group" "default" {
   vpc_id = aws_vpc.web_vpc.id
 
   tags = {
-    Name        = "${local.resource_prefix.value}-rds-sg"
-    Environment = local.resource_prefix.value
+    Name                 = "${local.resource_prefix.value}-rds-sg"
+    Environment          = local.resource_prefix.value
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "default"
+    yor_trace            = "e2769f9c-659c-4866-9238-365f851475b8"
   }
 }
 
@@ -110,6 +155,17 @@ resource "aws_security_group_rule" "egress" {
 resource "aws_iam_instance_profile" "ec2profile" {
   name = "${local.resource_prefix.value}-profile"
   role = "${aws_iam_role.ec2role.name}"
+  tags = {
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "ec2profile"
+    yor_trace            = "90bd86a0-4566-4dfb-9b01-4efafbadfbc8"
+  }
 }
 
 resource "aws_iam_role" "ec2role" {
@@ -133,8 +189,17 @@ resource "aws_iam_role" "ec2role" {
 EOF
 
   tags = {
-    Name        = "${local.resource_prefix.value}-role"
-    Environment = local.resource_prefix.value
+    Name                 = "${local.resource_prefix.value}-role"
+    Environment          = local.resource_prefix.value
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "ec2role"
+    yor_trace            = "5d2bdb06-5021-442f-9171-e01abfb95f40"
   }
 }
 
@@ -334,7 +399,16 @@ sudo chown root:root /var/www/html/index.php
 
 EOF
   tags = {
-    Name = "${local.resource_prefix.value}-dbapp"
+    Name                 = "${local.resource_prefix.value}-dbapp"
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/db-app.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "db_app"
+    yor_trace            = "9b19bd09-d2bc-47ae-894c-a265ff358f77"
   }
 }
 

@@ -7,6 +7,17 @@ resource azurerm_app_service_plan "example" {
     tier = "Dynamic"
     size = "S1"
   }
+  tags = {
+    git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
+    git_file             = "terraform/azure/app_service.tf"
+    git_last_modified_at = "2020-06-17 12:59:55"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "example"
+    yor_trace            = "d40778fb-4aee-47ac-b47b-dd078e0818e0"
+  }
 }
 
 resource azurerm_app_service "app-service1" {
@@ -17,6 +28,17 @@ resource azurerm_app_service "app-service1" {
   https_only          = false
   site_config {
     min_tls_version = "1.1"
+  }
+  tags = {
+    git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
+    git_file             = "terraform/azure/app_service.tf"
+    git_last_modified_at = "2020-06-19 21:14:50"
+    git_last_modified_by = "Adin.Ermie@outlook.com"
+    git_modifiers        = "Adin.Ermie/nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "app-service1"
+    yor_trace            = "b64b5acd-7766-40f4-9ab9-e3352d6f192f"
   }
 }
 
@@ -29,6 +51,17 @@ resource azurerm_app_service "app-service2" {
 
   auth_settings {
     enabled = false
+  }
+  tags = {
+    git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
+    git_file             = "terraform/azure/app_service.tf"
+    git_last_modified_at = "2020-06-19 21:14:50"
+    git_last_modified_by = "Adin.Ermie@outlook.com"
+    git_modifiers        = "Adin.Ermie/nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "app-service2"
+    yor_trace            = "c16ec6c2-1bc8-4ec8-9429-8207fb5ef14d"
   }
 }
 

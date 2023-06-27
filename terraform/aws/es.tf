@@ -14,6 +14,17 @@ resource "aws_elasticsearch_domain" "monitoring-framework" {
     ebs_enabled = true
     volume_size = 30
   }
+  tags = {
+    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_file             = "terraform/aws/es.tf"
+    git_last_modified_at = "2020-06-16 14:46:24"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "monitoring-framework"
+    yor_trace            = "82a20a00-e40b-41bc-a1b8-30c2ad154fed"
+  }
 }
 
 data aws_iam_policy_document "policy" {

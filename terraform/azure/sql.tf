@@ -14,8 +14,17 @@ resource "azurerm_sql_server" "example" {
   administrator_login          = "ariel"
   administrator_login_password = "Aa12345678"
   tags = {
-    environment = var.environment
-    terragoat   = "true"
+    environment          = var.environment
+    terragoat            = "true"
+    git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
+    git_file             = "terraform/azure/sql.tf"
+    git_last_modified_at = "2020-06-19 21:14:50"
+    git_last_modified_by = "Adin.Ermie@outlook.com"
+    git_modifiers        = "Adin.Ermie/nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "example"
+    yor_trace            = "185faf77-8b74-474d-b068-7e336182cd2b"
   }
 }
 
@@ -49,6 +58,17 @@ resource "azurerm_mysql_server" "example" {
   infrastructure_encryption_enabled = true
   public_network_access_enabled     = true
   ssl_enforcement_enabled           = false
+  tags = {
+    git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
+    git_file             = "terraform/azure/sql.tf"
+    git_last_modified_at = "2020-06-19 21:14:50"
+    git_last_modified_by = "Adin.Ermie@outlook.com"
+    git_modifiers        = "Adin.Ermie/nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "example"
+    yor_trace            = "f4a300db-2601-4663-ba4e-08960ba66e06"
+  }
 }
 
 resource "azurerm_postgresql_server" "example" {
@@ -64,6 +84,17 @@ resource "azurerm_postgresql_server" "example" {
   administrator_login_password = "Aa12345678"
   version                      = "9.5"
   ssl_enforcement_enabled      = false
+  tags = {
+    git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
+    git_file             = "terraform/azure/sql.tf"
+    git_last_modified_at = "2020-06-19 21:14:50"
+    git_last_modified_by = "Adin.Ermie@outlook.com"
+    git_modifiers        = "Adin.Ermie/nimrodkor"
+    git_org              = "Fortiwatch"
+    git_repo             = "terragoat"
+    yor_name             = "example"
+    yor_trace            = "243b083d-bbef-487e-87b2-f77b1597662b"
+  }
 }
 
 resource "azurerm_postgresql_configuration" "thrtottling_config" {
